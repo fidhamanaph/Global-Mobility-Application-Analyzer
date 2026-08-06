@@ -1,14 +1,14 @@
 # 🌍 Global Mobility Application Analyzer (Visa Approval Prediction System)
 
-An end-to-end **Machine Learning and MLOps project** that predicts whether a visa application is likely to be **Certified** or **Denied** using historical immigration application data.
+An end-to-end Machine Learning and MLOps project that predicts whether a visa application is likely to be **Certified** or **Denied** using historical immigration application data.
 
-The project integrates **Machine Learning, MLOps, Cloud Deployment, CI/CD Automation, and FastAPI** to deliver a production-ready visa approval prediction system capable of making real-time predictions.
+The project combines **Machine Learning, MLOps, Cloud Deployment, CI/CD Automation, and FastAPI** to build a production-ready visa approval prediction system.
 
 ---
 
 ## 📌 Project Overview
 
-Visa approval decisions depend on several applicant and employer-related factors, including:
+Visa approval decisions depend on multiple applicant and employer-related factors such as:
 
 * Education Level
 * Work Experience
@@ -19,16 +19,18 @@ Visa approval decisions depend on several applicant and employer-related factors
 * Job Training Requirements
 * Employment Type
 
-Manually evaluating thousands of visa applications can be time-consuming and difficult to scale. This project leverages Machine Learning to automate the screening process and provide accurate, real-time visa approval predictions through a web application.
+Manually evaluating large numbers of visa applications can be time-consuming and difficult to scale.
+
+This project leverages Machine Learning to automate the prediction process and provide real-time visa approval predictions through a web application.
 
 ---
 
 ## 🎯 Objectives
 
 * Predict whether a visa application will be **Certified** or **Denied**
-* Automate the visa application screening process
+* Automate visa application screening
 * Build a complete ML pipeline from data ingestion to deployment
-* Implement MLOps practices for monitoring and model management
+* Implement MLOps practices for model monitoring and deployment
 * Deploy the application on AWS Cloud
 * Enable real-time predictions through a FastAPI web application
 
@@ -74,20 +76,18 @@ Manually evaluating thousands of visa applications can be time-consuming and dif
 
 ## 📊 Dataset
 
-### Dataset Source
+**Dataset Source:**
 
-* EasyVisa Dataset (Kaggle)
+[EasyVisa Dataset (Kaggle)](https://www.kaggle.com/datasets/moro23/easyvisa-dataset?utm_source=chatgpt.com)
 
 ### Dataset Information
 
-* **Total Records:** 25,480
-* **Features:** 12
-* **Target Variable:** Case Status
+* Total Records: **25,480**
+* Features: **12**
+* Target Variable: **Case Status**
 
-#### Target Classes
-
-* Certified
-* Denied
+  * Certified
+  * Denied
 
 ### Key Features
 
@@ -99,40 +99,28 @@ Manually evaluating thousands of visa applications can be time-consuming and dif
 * Region of Employment
 * Prevailing Wage
 * Unit of Wage
-* Full-Time Position
+* Full Time Position
 * Year of Establishment
 
 ---
 
 ## 🔄 End-to-End Workflow
 
-```text
-Historical Visa Data
-        ↓
-Data Ingestion (MongoDB)
-        ↓
-Data Validation
-        ↓
-Data Drift Detection
-        ↓
-Feature Engineering
-        ↓
-Data Transformation
-        ↓
-Model Training
-        ↓
-Hyperparameter Tuning
-        ↓
-Model Evaluation
-        ↓
-Model Pusher
-        ↓
-AWS S3 Model Storage
-        ↓
-FastAPI Deployment
-        ↓
-Real-Time Predictions
-```
+1. Historical Visa Data Collection
+2. Data Ingestion from MongoDB
+3. Exploratory Data Analysis (EDA)
+4. Data Validation
+5. Data Drift Detection using Evidently AI
+6. Data Preprocessing
+7. Feature Engineering
+8. Data Transformation Pipeline
+9. Model Training
+10. Hyperparameter Tuning
+11. Model Evaluation
+12. Model Pusher
+13. AWS S3 Model Storage
+14. FastAPI Deployment
+15. Real-Time Prediction Pipeline
 
 ---
 
@@ -141,8 +129,8 @@ Real-Time Predictions
 The following preprocessing and feature engineering techniques were implemented:
 
 * Missing Value Handling
-* Duplicate Removal
 * Categorical Encoding
+* Duplicate Removal
 * Feature Scaling
 * Company Age Feature Creation
 * Yeo-Johnson Power Transformation
@@ -153,13 +141,13 @@ The following preprocessing and feature engineering techniques were implemented:
 
 ## 🤖 Models Trained
 
-The following machine learning models were trained and evaluated:
+The following models were trained and evaluated:
 
 * Logistic Regression
-* Decision Tree Classifier
 * Random Forest Classifier
 * AdaBoost Classifier
 * Gradient Boosting Classifier
+* Decision Tree Classifier
 * K-Nearest Neighbors (KNN)
 * Support Vector Classifier (SVC)
 * XGBoost Classifier
@@ -172,20 +160,18 @@ The following machine learning models were trained and evaluated:
 
 ---
 
-## 🏆 Best Performing Model
+## 🏆 Best Model
 
-### K-Nearest Neighbors (KNN)
+**K-Nearest Neighbors (KNN)**
 
-| Metric   | Score  |
-| -------- | ------ |
-| Accuracy | 94.53% |
+### Performance
 
-### Performance Highlights
-
+* Accuracy: **94.53%**
 * High Precision
 * High Recall
 * Strong Classification Performance
-* Effective distinction between Certified and Denied applications
+
+The model demonstrated excellent performance in distinguishing between certified and denied visa applications.
 
 ---
 
@@ -197,8 +183,8 @@ Used for:
 
 * Model Storage
 * Artifact Storage
-* Model Versioning
 * Production Model Management
+* Model Versioning
 
 ### CI/CD Pipeline
 
@@ -209,27 +195,20 @@ Implemented using:
 * AWS ECR
 * AWS EC2
 
-### Deployment Workflow
+Deployment Process:
 
-```text
-Developer Pushes Code
-          ↓
-GitHub Actions Triggered
-          ↓
-Docker Image Built
-          ↓
-Image Pushed to AWS ECR
-          ↓
-EC2 Pulls Latest Image
-          ↓
-Application Redeployed
-```
+1. Push code to GitHub
+2. GitHub Actions triggers workflow
+3. Docker image is built
+4. Image pushed to AWS ECR
+5. EC2 pulls latest image
+6. Application redeployed automatically
 
 ---
 
 ## 🌐 FastAPI Web Application
 
-The application allows users to:
+The web application allows users to:
 
 * Enter visa application details
 * Submit applicant information
@@ -238,26 +217,21 @@ The application allows users to:
 
 ### Prediction Flow
 
-```text
-User Input
-     ↓
-Prediction Pipeline
-     ↓
-Trained Model
-     ↓
-Approval Prediction
-```
+User Input → Prediction Pipeline → Trained Model → Approval Prediction
 
-### Output
+Output:
 
-* ✅ Visa Approved
-* ❌ Visa Not Approved
+* Visa Approved
+* Visa Not Approved
 
 ---
 
 ## 🏗️ System Architecture
-###System Architecture Diagram
-<img width="1619" height="972" alt="image" src="https://github.com/user-attachments/assets/b30116df-b5ae-43f6-94ea-c028c3d5d6db" />
+
+### System Architecture Diagram
+
+<img width="1619" height="972" alt="system architecture of gmaa" src="https://github.com/user-attachments/assets/395e91cd-825e-4820-9a1d-aef7974becd0" />
+
 
 ```text
 MongoDB
@@ -266,7 +240,7 @@ Data Ingestion
    ↓
 Data Validation
    ↓
-Data Drift Detection
+Drift Detection
    ↓
 Feature Engineering
    ↓
@@ -288,30 +262,26 @@ User Predictions
 ## 📸 Application Screenshots
 
 ### User Interface
-
-<img width="1600" height="593" alt="image" src="https://github.com/user-attachments/assets/e148305a-1317-4c9b-a544-3673ecb3ad6b" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/62d2384e-4a87-4e92-a5c0-07687f47192e" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/7a7249d4-c0c8-4d94-917f-8d529734a1b5" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/79efe9b2-9caf-42f4-89ac-2bcc014ea243" />
-<img width="1600" height="634" alt="image" src="https://github.com/user-attachments/assets/74a59112-42be-4809-a892-3423ef5f39e5" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/448b6e98-c1f1-46ad-946f-02d4f13a906f" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/cbe8773c-a571-4d8f-a037-88e5fa091a09" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/52cb64f6-9780-4f65-85cc-f253aff4776c" />
-<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/a485fbe4-4815-488d-a33a-1e532fe3cd8a" />
-
+<img width="1600" height="593" alt="1" src="https://github.com/user-attachments/assets/7348b5bc-4113-42bd-a85f-9c7d06ab70f3" />
+<img width="1600" height="899" alt="2" src="https://github.com/user-attachments/assets/c734e484-ed5c-48b3-a048-5b2a97eee169" />
+<img width="1600" height="899" alt="3" src="https://github.com/user-attachments/assets/bc1caf38-86f2-4008-8929-762fe72d2cb1" />
+<img width="1600" height="899" alt="4" src="https://github.com/user-attachments/assets/0e84be80-a0dd-467c-b8ec-c271336c88cc" />
+<img width="1600" height="634" alt="5" src="https://github.com/user-attachments/assets/24e16756-9b7e-4214-abdc-fac73bba8664" />
+<img width="1600" height="899" alt="6" src="https://github.com/user-attachments/assets/9bd9a47f-6596-4c6b-b66f-54c57676fdcd" />
+<img width="1600" height="899" alt="7" src="https://github.com/user-attachments/assets/d5590f29-ddf2-4599-bfba-04c2760296bc" />
+<img width="1600" height="899" alt="8" src="https://github.com/user-attachments/assets/c28e8708-aa1e-44a1-854a-6db2eca20014" />
+<img width="1600" height="899" alt="9" src="https://github.com/user-attachments/assets/c6521793-31a3-4d74-9777-7c28ea76b88b" />
 
 ---
 
 ## 🚧 Challenges Faced
 
-During development and deployment, several challenges were encountered:
-
 * Handling class imbalance using SMOTE-ENN
 * Schema validation failures during data validation
 * NumPy 2.0 compatibility issues with Evidently AI
-* AWS S3 integration and artifact upload errors
-* Docker configuration and deployment issues
-* AWS credentials and environment variable management
+* AWS S3 integration and model upload errors
+* Deployment and Docker configuration issues
+* AWS credential and environment variable management
 * CI/CD pipeline debugging and automation challenges
 
 ---
@@ -323,80 +293,17 @@ During development and deployment, several challenges were encountered:
 * Implemented industry-level MLOps workflows
 * Automated training, evaluation, deployment, and monitoring
 * Deployed the application on AWS Cloud
-* Achieved high prediction performance using KNN
-* Enabled scalable and real-time visa approval predictions
+* Achieved high prediction performance with KNN
+* Enabled scalable and real-time predictions
 
 ---
 
 ## 👨‍💻 Team Members
 
-### 👤 Fidha Manaph
+### Chandrajyothi Parambi Biju
 
-**Machine Learning Intern**
+Machine Learning Intern
 
-### 👤 Chandrajyothi Parambi Biju
+### Fidha Manaph
 
-**Machine Learning Intern**
-
----
-
-## ⭐ Acknowledgements
-
-This project was developed as part of a Machine Learning internship, with a focus on applying real-world MLOps practices, cloud deployment, CI/CD automation, and production-ready machine learning workflows.
-
-We would like to express our sincere gratitude to Skoliko for providing us with the opportunity to work on this project and for guiding us throughout the internship. The mentorship, technical support, and industry exposure provided by the Skoliko team played a significant role in helping us successfully design, develop, and deploy this end-to-end machine learning solution.
-
----
-
-### 🔗 Repository Structure
-
-```text
-├── artifact/
-├── config/
-├── logs/
-├── notebooks/
-├── src/
-├── templates/
-├── static/
-├── .github/workflows/
-├── Dockerfile
-├── requirements.txt
-├── app.py
-├── main.py
-└── README.md
-```
-
-to run:
-1. clone repo:
-```bash
-git clone https://github.com/fidhamanaph/Global-Mobility-Application-Analyzer
-```
-
-2. navigate to project:
-```bash
-cd Global-Mobility-Application-Analyzer/
-```
-
-3. create and activate virtual environment:
-```bash
-conda create -n application python=3.8 -y
-conda activate application 
-```
-
-4. install required dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-##export the environment variable
-```bash
-export MONGODB_URL="mongodb+srv://fidhamanaph:imthiyaz1@cluster0.9ounu25.mongodb.net/?appName=Cluster0"
-
-GIT export AWS_ACCESS_KEY=<AWS_ACCESS_KEY_ID>
-
-export
-AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY_ID>
-
-529845836660.dkr.ecr.us-east-1.amazonaws.com/visarepo
-```
-
+Machine Learning Intern
